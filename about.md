@@ -1,8 +1,6 @@
 ---
 layout: post
-title: About
+title: Contact
 ---
 
-This is an example page!
-
-Actually, it has the same layout of a post...
+You can mail me @ ganesan.santhanam96@gmail.com
