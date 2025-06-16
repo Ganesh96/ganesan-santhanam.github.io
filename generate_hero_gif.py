@@ -68,4 +68,28 @@ def generate_hero_animation():
     # Create a wide aspect ratio figure
     fig = plt.figure(figsize=(16, 9), facecolor='none')
     ax = fig.add_subplot(111, aspect='equal', autoscale_on=False,
-                         xlim=(-3
+                         xlim=(-3, 3), ylim=(-3, 3))
+    ax.axis('off')
+
+    line, = ax.plot([], [], 'o-', lw=3, color='#E3E3E3', markersize=12, markerfacecolor='#A5A5A5', markeredgecolor='#E3E3E3')
+    trace, = ax.plot([], [], '-', lw=1.5, color='#f66338', alpha=0.8)
+
+    def init():
+        line.set_data([], [])
+        trace.set_data([], [])
+        return line, trace
+
+    def animate(i):
+        line.set_data([0, x1[i], x2[i]], [0, y1[i], y2[i]])
+        start_index = max(0, i - 120)
+        trace.set_data(x2[start_index:i], y2[start_index:i])
+        return line, trace
+
+    ani = FuncAnimation(fig, animate, frames=len(pendulum.time_points),
+                        interval=dt*1000, blit=True, init_func=init)
+
+    ani.save('hero_animation.gif', writer='imagemagick', fps=int(1/dt), savefig_kwargs={'facecolor': 'none'})
+    print("Saved hero banner to 'hero_animation.gif'")
+
+if __name__ == '__main__':
+    generate_hero_animation()
