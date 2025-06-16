@@ -1,6 +1,6 @@
 navbar_entries:
-  - title: Contact
-    url: Contact
+  - title: About
+    url: about
   - title: Blog
     url: blog
   - title: Work Experience
@@ -9,29 +9,39 @@ navbar_entries:
     url: https://ganesh96.github.io/ganesan-santhanam.github.io/
 
 project_entries:
+  - title: Job Recommendation Engine
+    url: job-recommendation-engine
+    desc: "A job recommendation engine using spaCy NLP and PostgreSQL + pgvector for skill/job vector storage."
+    tags: ["Python", "NLP", "AWS"]
+  - title: Candidate Referral System
+    url: candidate-referral-system
+    desc: "A novel candidate referral system that incentivizes high quality referrals on a Neo4j GraphDB network."
+    tags: ["Neo4j", "AWS", "Python"]
+  - title: AI-Powered Document Manager
+    url: ai-document-manager
+    desc: "A microservice with a GloVe NLP model in TensorFlow for producing on-demand regulatory insight reports."
+    tags: ["Python", "TensorFlow", "NodeJS"]
   - title: Simple-Reddit
     url: simple-reddit
     desc: A forum website built with Angular, Go, and MongoDB.
-  - title: ML-Powered Image Classifier
-    url: ml-powered-image-classifier
-    desc: An image classification model built with TensorFlow and Python.
-  - title: Go URL Shortener
-    url: go-url-shortener
-    desc: A high-performance URL shortener service built with Golang and Redis.
+    tags: ["Go", "Angular", "MongoDB"]
 
 footer_entries:
   - title: LinkedIn
-    url: https://www.linkedin.com/in/ganesansantha77/
+    url: https://linkedin.com/in/ganesansantha77
   - title: Github
-    url: https://github.com/ganesh96
+    url: https://github.com/Ganesh96
   - title: Feed
     url: feed.xml
 
 misc_entries:
-  - title: Coding Profiles
+  - title: Technical Skills
     entries:
-      - title: "LeetCode"
-        url: https://leetcode.com/u/ganesansanthanam/
+      - title: "Programming: C#, Python, JavaScript (ES6+), TypeScript"
+      - title: "Backend: ASP.NET Core, Node.js, Django, RESTful APIs"
+      - title: "Cloud & DevOps: AWS (S3, Lambda, RDS, ECS, EC2), Azure"
+      - title: "Frontend: HTML5, CSS3, ReactJS, Redux, .NET WPF"
+      - title: "Databases: SQL Server, PostgreSQL, MongoDB, Redis"
   - title: Blog posts
     post_list: true
     url: false
