@@ -15,6 +15,23 @@
     
     <!-- Lucide Icons for social media links -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind configuration for Notion-style dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'notion-dark': '#191919',
+                        'notion-dark-card': '#2F2F2F',
+                        'notion-dark-text': '#E3E3E3',
+                        'notion-dark-subtle': '#A5A5A5'
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
         /* Custom styles to complement Tailwind */
@@ -29,14 +46,14 @@
             background: #f1f5f9;
         }
         .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
+            background: #1F1F1F;
         }
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 10px;
         }
         .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
+            background: #4a4a4a;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
@@ -46,21 +63,21 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-500">
+<body class="bg-white text-slate-900 dark:bg-notion-dark dark:text-notion-dark-text transition-colors duration-300">
 
     <!-- Header & Navigation -->
-    <header class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
+    <header class="bg-white/70 dark:bg-notion-dark/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <span class="font-bold text-xl text-slate-900 dark:text-white">Ganesan Santhanam</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</a>
-                    <a href="#experience" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Experience</a>
-                    <a href="#skills" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Skills</a>
-                    <a href="#projects" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Projects</a>
-                    <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
+                    <a href="#about" class="text-slate-600 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition">About</a>
+                    <a href="#experience" class="text-slate-600 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition">Experience</a>
+                    <a href="#projects" class="text-slate-600 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition">Projects</a>
+                    <a href="#skills" class="text-slate-600 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition">Skills</a>
+                    <a href="#contact" class="text-slate-600 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition">Contact</a>
                 </div>
                 <div class="flex items-center">
                      <button id="theme-toggle" class="p-2 rounded-md text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -78,20 +95,28 @@
         <section id="about" class="min-h-screen flex items-center py-16">
             <div class="w-full">
                 <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white">Ganesan Santhanam</h1>
-                <p class="mt-4 text-xl md:text-2xl text-slate-600 dark:text-slate-300">Full Stack Software Engineer</p>
-                <p class="mt-6 max-w-3xl text-slate-500 dark:text-slate-400">
+                <p class="mt-4 text-xl md:text-2xl text-slate-700 dark:text-notion-dark-subtle">Full Stack Software Engineer</p>
+                <p class="mt-6 max-w-3xl text-slate-600 dark:text-notion-dark-subtle">
                     5 years of experience building scalable, cloud-native applications with creative and sophisticated approaches such as Event-Driven Design, Microservice Architecture, and AI/ML.
                 </p>
-                <div class="mt-8 flex items-center space-x-4">
-                    <a href="https://linkedin.com/in/ganesansantha77" target="_blank" class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="https://linkedin.com/in/ganesansantha77" target="_blank" class="text-slate-500 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition duration-300">
                         <i data-lucide="linkedin" class="w-6 h-6"></i>
                         <span class="sr-only">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/Ganesh96" target="_blank" class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <a href="https://github.com/Ganesh96" target="_blank" class="text-slate-500 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition duration-300">
                         <i data-lucide="github" class="w-6 h-6"></i>
                         <span class="sr-only">GitHub</span>
                     </a>
-                    <a href="/Ganesan_Santhanam%20Resume.pdf" download class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    <a href="https://leetcode.com/ganesh96/" target="_blank" class="text-slate-500 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LeetCode</title><path d="M13.483 0a1.374 1.374 0 0 0-1.374 1.374v18.405a1.95 1.95 0 0 0 1.95 1.95h5.457a1.95 1.95 0 0 0 1.95-1.95V1.374A1.374 1.374 0 0 0 19.438 0h-5.955ZM18.062 18.062h-3.22V5.787h3.22v12.275Zm-12.275-6.526a1.374 1.374 0 0 0-1.374-1.374H1.374A1.374 1.374 0 0 0 0 11.536v8.21a1.374 1.374 0 0 0 1.374 1.374h3.039a1.374 1.374 0 0 0 1.374-1.374v-8.21Z" fill="currentColor"/></svg>
+                        <span class="sr-only">LeetCode</span>
+                    </a>
+                     <a href="https://codeforces.com/profile/ganesh_96" target="_blank" class="text-slate-500 dark:text-notion-dark-subtle hover:text-indigo-600 dark:hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Codeforces</title><path d="M4.50001 16.5V7.5H2.25V5.25H7.5V18.75H4.50001V16.5Z M12 18.75V5.25H15V18.75H12Z M19.5 18.75V5.25H22.5V18.75H19.5Z"/></svg>
+                        <span class="sr-only">Codeforces</span>
+                    </a>
+                    <a href="Ganesan_Santhanam%20Resume.pdf" download class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                         Download Resume
                     </a>
                 </div>
@@ -101,71 +126,48 @@
         <!-- Experience Section -->
         <section id="experience" class="py-16 md:py-24">
             <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
-            <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-4">
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4">
                 <!-- Maxil Technology Solutions -->
-                <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-slate-900">
+                <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-notion-dark">
                     <h3 class="text-xl font-semibold">Software Engineer</h3>
-                    <p class="text-slate-600 dark:text-slate-400">Maxil Technology Solutions</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500">May 2024 - Present</p>
-                    <ul class="mt-2 list-disc list-inside text-slate-500 dark:text-slate-400 space-y-1">
+                    <p class="dark:text-notion-dark-subtle">Maxil Technology Solutions</p>
+                    <p class="text-sm text-slate-500">May 2024 - Present</p>
+                    <ul class="mt-2 list-disc list-inside dark:text-notion-dark-subtle space-y-1">
                         <li>Led development of a job recommendation engine using spaCy NLP.</li>
                         <li>Designed a candidate referral system on a Neo4j GraphDB network.</li>
                         <li>Increased job posting views by 15% with a clickstream analysis microservice.</li>
                     </ul>
                 </div>
                 <!-- BestRx Pharmacy Software -->
-                 <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-slate-900">
+                 <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-notion-dark">
                     <h3 class="text-xl font-semibold">Full Stack Engineer</h3>
-                    <p class="text-slate-600 dark:text-slate-400">BestRx Pharmacy Software</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500">Aug 2023 - Apr 2024</p>
-                    <ul class="mt-2 list-disc list-inside text-slate-500 dark:text-slate-400 space-y-1">
+                    <p class="dark:text-notion-dark-subtle">BestRx Pharmacy Software</p>
+                    <p class="text-sm text-slate-500">Aug 2023 - Apr 2024</p>
+                    <ul class="mt-2 list-disc list-inside dark:text-notion-dark-subtle space-y-1">
                         <li>Built a prescription transfer tracking system using ASP.NET Core and ReactJS.</li>
                         <li>Developed an automated insurance claims system in C# to improve HIPAA compliance.</li>
                     </ul>
                 </div>
                 <!-- Autoreview.ai -->
-                <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-slate-900">
+                <div class="mb-12 md:mb-16 pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-notion-dark">
                     <h3 class="text-xl font-semibold">Software Engineer Intern, AI/ML</h3>
-                    <p class="text-slate-600 dark:text-slate-400">Autoreview.ai</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500">May 2022 - Dec 2022</p>
-                    <ul class="mt-2 list-disc list-inside text-slate-500 dark:text-slate-400 space-y-1">
+                    <p class="dark:text-notion-dark-subtle">Autoreview.ai</p>
+                    <p class="text-sm text-slate-500">May 2022 - Dec 2022</p>
+                    <ul class="mt-2 list-disc list-inside dark:text-notion-dark-subtle space-y-1">
                         <li>Engineered GIS workflows using PostGIS & Google Maps APIs in NodeJS.</li>
                         <li>Produced regulatory insight reports with 92% accuracy using a GloVe NLP model.</li>
                     </ul>
                 </div>
                  <!-- Infosys -->
-                <div class="pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-slate-900">
+                <div class="pl-8 relative before:absolute before:left-[-9px] before:top-1 before:w-4 before:h-4 before:bg-indigo-600 before:rounded-full before:border-4 before:border-white dark:before:border-notion-dark">
                     <h3 class="text-xl font-semibold">Senior Software Engineer</h3>
-                    <p class="text-slate-600 dark:text-slate-400">Infosys</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500">Jul 2018 - Jul 2021</p>
-                    <ul class="mt-2 list-disc list-inside text-slate-500 dark:text-slate-400 space-y-1">
+                    <p class="dark:text-notion-dark-subtle">Infosys</p>
+                    <p class="text-sm text-slate-500">Jul 2018 - Jul 2021</p>
+                    <ul class="mt-2 list-disc list-inside dark:text-notion-dark-subtle space-y-1">
                         <li>Developed and supported modules using WPF.NET Framework and C#.</li>
                         <li>Created 22 Power BI report templates with SQL Server Integration.</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24">
-            <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <!-- Skill items -->
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>C#</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Python</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>JavaScript</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>TypeScript</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>ASP.NET Core</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Node.js</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>ReactJS</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>AWS</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Azure</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>SQL Server</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>PostgreSQL</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>MongoDB</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Redis</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Neo4j</span></div>
-                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Docker</span></div>
             </div>
         </section>
 
@@ -174,59 +176,96 @@
             <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project Card 1 -->
-                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <a href="https://github.com/Ganesh96/the-dentist-of-quotes" target="_blank" class="block bg-white dark:bg-notion-dark-card rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Job Recommendation Engine</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-4">Developed a job recommendation engine using spaCy NLP and PostgreSQL for optimized skill/job matching.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Python</span>
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">AWS</span>
-                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">NLP</span>
+                        <h3 class="text-xl font-semibold mb-2">The Dentist of Quotes</h3>
+                        <p class="text-slate-600 dark:text-notion-dark-subtle mb-4">A web application to generate and share stoic quotes. Built with a responsive frontend and a simple backend API.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">React</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Node.js</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">JavaScript</span>
                         </div>
                     </div>
-                </div>
+                </a>
                  <!-- Project Card 2 -->
-                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <a href="https://github.com/Ganesh96/SafeBuildings" target="_blank" class="block bg-white dark:bg-notion-dark-card rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Candidate Referral System</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-4">A novel candidate referral system that incentivizes high quality referrals on a Neo4j GraphDB network.</p>
-                         <div class="flex flex-wrap gap-2">
+                        <h3 class="text-xl font-semibold mb-2">SafeBuildings</h3>
+                        <p class="text-slate-600 dark:text-notion-dark-subtle mb-4">An application to analyze and visualize building safety data, incorporating GIS for flood-prone site identification.</p>
+                         <div class="flex flex-wrap gap-2 mt-4">
                             <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Python</span>
-                            <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-rose-900 dark:text-rose-300">Neo4j</span>
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">AWS</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">PostGIS</span>
+                             <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">Google Maps API</span>
                         </div>
                     </div>
-                </div>
+                </a>
                  <!-- Project Card 3 -->
-                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <a href="https://github.com/Ganesh96/Aeronstone" target="_blank" class="block bg-white dark:bg-notion-dark-card rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">AI-Powered Document Manager</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-4">A microservice with a GloVe NLP model in TensorFlow for producing on-demand regulatory insight reports.</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Python</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">TensorFlow</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">NodeJS</span>
+                        <h3 class="text-xl font-semibold mb-2">Aeronstone</h3>
+                        <p class="text-slate-600 dark:text-notion-dark-subtle mb-4">A full-stack web application for project management, featuring user authentication and real-time task tracking.</p>
+                         <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">C#</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">.NET</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-teal-900 dark:text-teal-300">SQL Server</span>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Project Card 4 -->
-                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <a href="https://github.com/Ganesh96/RatingClassifier" target="_blank" class="block bg-white dark:bg-notion-dark-card rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Automated Insurance Claims System</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-4">Developed an automated system in C# to improve revenue recovery and ensure HIPAA compliance.</p>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">C#</span>
-                             <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">.NET</span>
+                        <h3 class="text-xl font-semibold mb-2">Rating Classifier</h3>
+                        <p class="text-slate-600 dark:text-notion-dark-subtle mb-4">A machine learning model to classify product ratings based on review text, using natural language processing techniques.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                             <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Python</span>
+                             <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900 dark:text-orange-300">Scikit-learn</span>
+                             <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300">NLP</span>
                         </div>
                     </div>
-                </div>
+                </a>
+                <!-- Project Card 5 -->
+                <a href="https://github.com/ganesansanthanam/solutions-leet-code" target="_blank" class="block bg-white dark:bg-notion-dark-card rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">LeetCode Solutions</h3>
+                        <p class="text-slate-600 dark:text-notion-dark-subtle mb-4">A public repository of my solutions to various LeetCode problems, demonstrating problem-solving skills.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                             <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Python</span>
+                             <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">C#</span>
+                             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Algorithms</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Skill items -->
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>C#</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Python</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>JavaScript</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>TypeScript</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>ASP.NET Core</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Node.js</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>ReactJS</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>AWS</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Azure</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>SQL Server</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>PostgreSQL</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>MongoDB</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Redis</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Neo4j</span></div>
+                <div class="bg-white dark:bg-notion-dark-card p-4 rounded-lg shadow-md flex items-center justify-center text-center"><span>Docker</span></div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="text-center py-16 md:py-24">
             <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-            <p class="max-w-xl mx-auto text-slate-600 dark:text-slate-400 mb-8">
+            <p class="max-w-xl mx-auto dark:text-notion-dark-subtle mb-8">
                 I'm currently open to new opportunities. If you have a project in mind or just want to say hi, feel free to reach out.
             </p>
             <a href="mailto:ganesan.santhanam96@gmail.com" class="inline-block bg-indigo-600 text-white font-medium py-3 px-8 rounded-lg hover:bg-indigo-700 transition-colors">
@@ -238,7 +277,7 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-slate-500 dark:text-slate-400">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-slate-500 dark:text-notion-dark-subtle">
             <p>&copy; 2024 Ganesan Santhanam. All Rights Reserved.</p>
         </div>
     </footer>
