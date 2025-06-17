@@ -7,6 +7,8 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <script defer data-domain="ganesh96.github.io/ganesan-santhanam.github.io" src="https://plausible.io/js/script.file-downloads.pageview-props.tagged-events.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,28 +40,28 @@
         .dark ::-webkit-scrollbar-thumb { background: #4a4a4a; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         .dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
-         @keyframes subtle-glow {
-        0%, 100% {
-            text-shadow: 0 0 5px rgba(79, 70, 229, 0.5), 0 0 10px rgba(79, 70, 229, 0.3);
+        .glowing-name {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #0284c7; 
+            animation: subtle-glow 3s infinite alternate;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
         }
-        50% {
-            text-shadow: 0 0 10px rgba(79, 70, 229, 0.7), 0 0 20px rgba(79, 70, 229, 0.5);
+
+        @keyframes subtle-glow {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(2, 132, 199, 0.5), 0 0 10px rgba(2, 132, 199, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 10px rgba(2, 132, 199, 0.7), 0 0 20px rgba(2, 132, 199, 0.5);
+            }
         }
-    }
 
-    .glowing-name {
-        font-weight: bold;
-        font-size: 1.25rem; /* text-xl */
-        color: #4f46e5; /* indigo-600 */
-        animation: subtle-glow 3s infinite alternate;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-    }
-
-    .glowing-name:hover {
-        transform: scale(1.05);
-        text-shadow: 0 0 15px rgba(79, 70, 229, 0.9), 0 0 25px rgba(79, 70, 229, 0.7);
-    }
+        .glowing-name:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px rgba(2, 132, 199, 0.9), 0 0 25px rgba(2, 132, 199, 0.7);
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 dark:bg-notion-dark dark:text-notion-dark-text transition-colors duration-300">
