@@ -64,7 +64,6 @@
             text-shadow: 0 0 15px rgba(2, 132, 199, 0.9), 0 0 25px rgba(2, 132, 199, 0.7);
         }
 
-        /* Splash Screen and Animation Styles */
         #main-content {
             transition: opacity 1s ease-in-out;
         }
@@ -88,20 +87,18 @@
 </head>
 <body class="bg-white text-slate-900 dark:bg-notion-dark dark:text-notion-dark-text transition-colors duration-300">
 
-    <!-- Splash Screen HTML -->
     <div id="splash-screen" class="fixed inset-0 bg-white dark:bg-notion-dark flex flex-col items-center justify-center z-[100] transition-opacity duration-1000 ease-in-out overflow-hidden">
         <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white text-center p-8 animate-fade-in-up" style="animation-delay: 0.5s;">
             Hi, I am Ganesh
         </h1>
-        <p class="text-2xl md:text-4xl text-slate-700 dark:text-notion-dark-subtle text-center mb-4 animate-fade-in-up" style="animation-delay: 1s;">
-            Looks like you are from <span id="geolocation">...</span>
+        <p id="geolocation-line" class="text-2xl md:text-4xl text-slate-700 dark:text-notion-dark-subtle text-center mb-4 animate-fade-in-up" style="animation-delay: 1s; visibility: hidden;">
+            Looks like you are from <span id="geolocation"></span>
         </p>
         <h2 class="text-3xl md:text-5xl font-semibold text-indigo-600 dark:text-indigo-400 text-center p-4 animate-fade-in-up" style="animation-delay: 1.5s;">
             Let me share something about myself
         </h2>
     </div>
 
-    <!-- Main content starts hidden -->
     <div id="main-content" class="opacity-0">
         <header class="bg-white/70 dark:bg-notion-dark/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -437,7 +434,7 @@
 
         <footer class="border-t border-slate-200 dark:border-slate-800">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-slate-500 dark:text-notion-dark-subtle">
-                <p>© 2024 Ganesan Santhanam. All Rights Reserved.</p>
+                <p>© 2026 Ganesan Santhanam. All Rights Reserved.</p>
             </div>
         </footer>
     </div>
@@ -445,7 +442,6 @@
     <script>
         lucide.createIcons();
 
-        // Theme toggle logic
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -478,26 +474,25 @@
             }
         });
 
-        // Splash Screen Logic
         document.addEventListener('DOMContentLoaded', () => {
             const splashScreen = document.getElementById('splash-screen');
             const mainContent = document.getElementById('main-content');
             const geolocationSpan = document.getElementById('geolocation');
+            const geolocationLine = document.getElementById('geolocation-line');
 
             async function showSplashAndLoadContent() {
                 try {
-                    const response = await fetch('https://ip-api.com/json/?fields=status,message,country,city');
+                    const response = await fetch('https://ip-api.com/json/?fields=status,message,country,regionName');
                     const data = await response.json();
-
-                    if (data.status === 'success') {
-                        const locationString = data.city && data.country ? `${data.city}, ${data.country}` : data.country || 'an amazing place';
+                    
+                    if (data.status === 'success' && data.regionName && data.country) {
+                        const locationString = `${data.regionName}, ${data.country}`;
                         geolocationSpan.textContent = locationString;
-                    } else {
-                        geolocationSpan.textContent = 'an amazing place';
+                        geolocationLine.style.visibility = 'visible';
                     }
+
                 } catch (error) {
                     console.error("Could not fetch geolocation:", error);
-                    geolocationSpan.textContent = 'an amazing place';
                 }
 
                 setTimeout(() => {
@@ -507,7 +502,7 @@
                         mainContent.style.opacity = '1';
                     }, { once: true });
 
-                }, 4000); // 4-second delay
+                }, 4000);
             }
 
             showSplashAndLoadContent();
